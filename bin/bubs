@@ -8,6 +8,8 @@ else
   args = ARGV.join(' ')
 end
 
+abort(Bubs.convert(Bubs::VERSION)) if args == "--version" || args == "-v"
+
 text = Bubs.convert(args)
 Bubs.copy(text)
 puts text
