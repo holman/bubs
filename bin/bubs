@@ -2,6 +2,12 @@
 $:.unshift File.expand_path('../../lib', __FILE__)
 require 'bubs'
 
-text = Bubs.convert(ARGV.join(' '))
+if $stdin.stat.size > 0
+  args = $stdin.read
+else
+  args = ARGV.join(' ')
+end
+
+text = Bubs.convert(args)
 Bubs.copy(text)
 puts text
