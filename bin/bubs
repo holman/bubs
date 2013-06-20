@@ -2,6 +2,8 @@
 $:.unshift File.expand_path('../../lib', __FILE__)
 require 'bubs'
 
+do_copy = !ARGV.delete_at(ARGV.index('--no-copy') || ARGV.length)
+
 text = Bubs.convert(ARGV.join(' '))
-Bubs.copy(text)
+Bubs.copy(text) if do_copy
 puts text
