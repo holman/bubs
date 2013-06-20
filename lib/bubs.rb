@@ -71,10 +71,20 @@ class Bubs
   #
   # Returns a String, but a much cooler string than what you had initially.
   def self.convert(text)
-    bubbled = text.gsub(/[a-z0-9]/i, CONVERT_MAP)
+    text.gsub(/[a-z0-9]/i, CONVERT_MAP)
+  end
 
-    `printf "#{bubbled}" | pbcopy` if RUBY_PLATFORM =~ /darwin/
-    `printf "#{bubbled}" | xclip`  if RUBY_PLATFORM =~ /linux/
-    puts bubbled
+  # Copies the text to clipboard
+  #
+  # ... not in windows, tho
+  def self.copy(text)
+    copycmd = case RUBY_PLATFORM
+    when /darwin/
+      'pbcopy'
+    when /linux/
+      'xclip'
+    end
+
+    copycmd && `printf "#{text}" | #{copycmd}`
   end
 end
