@@ -29,6 +29,8 @@ Gem::Specification.new do |s|
   s.email    = 'zach@zachholman.com'
   s.homepage = 'https://github.com/holman/bubs'
 
+  s.add_dependency 'activesupport', '~> 3.2'
+
   ## This gets added to the $LOAD_PATH so that 'lib/NAME.rb' can be required as
   ## require 'NAME.rb' or'/lib/NAME/file.rb' can be as require 'NAME/file.rb'
   s.require_paths = %w[lib]

@@ -1,4 +1,7 @@
 # encoding: utf-8
+
+require 'active_support/inflector'
+
 class Bubs
   VERSION = '0.0.1'
 
@@ -71,6 +74,7 @@ class Bubs
       :'0' => :⓪
     }
 
+    text = ::ActiveSupport::Inflector.transliterate text
     bubbled = text.split(//).map do |letter|
         bubs[letter.to_sym] || letter
     end.join('')
