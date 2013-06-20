@@ -76,7 +76,7 @@ class Bubs
     end.join('')
 
     `printf "#{bubbled}" | pbcopy` if RUBY_PLATFORM =~ /darwin/
-    `printf "#{bubbled}" | xclip` if RUBY_PLATFORM =~ /linux/
+    `printf "#{bubbled}" | xclip`  if RUBY_PLATFORM =~ /linux/
     puts bubbled
   end
 end
