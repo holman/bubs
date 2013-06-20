@@ -48,7 +48,9 @@ Gem::Specification.new do |s|
   s.files = %w[
     LICENSE.md
     README.md
+    Rakefile
     bin/bubs
+    bubs.gemspec
     lib/bubs.rb
   ]
   # = MANIFEST =
