@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
-$:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
+$:.unshift File.expand_path('../../lib', __FILE__)
 require 'bubs'
 
-Bubs.convert(ARGV.join(' '))
+text = Bubs.convert(ARGV.join(' '))
+Bubs.copy(text)
+puts text
