@@ -20,6 +20,6 @@ class Bubs
       'xclip'
     end
 
-    copycmd && `printf "#{text}" | #{copycmd}`
+    copycmd && system("printf \"#{text}\" | #{copycmd}")
   end
 end
