@@ -5,7 +5,11 @@ require 'bubs'
 if $stdin.stat.size > 0
   args = $stdin.read
 else
-  args = ARGV.join(' ')
+  if ARGV.delete("--loud") || ARGV.delete("-l")
+    args = ARGV.join(' ').upcase
+  else
+    args = ARGV.join(' ')
+  end
 end
 
 abort(Bubs.convert(Bubs::VERSION)) if args == "--version" || args == "-v"
