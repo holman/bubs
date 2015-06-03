@@ -1,6 +1,6 @@
 # encoding: utf-8
 class Bubs
-  VERSION = '0.0.3'
+  VERSION = '0.0.4'
 
   # Convert words to ⓌⓄⓇⒹⓈ.
   #
