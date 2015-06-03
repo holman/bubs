@@ -8,6 +8,9 @@ your commit messages- your coworkers will love you.
     $ bubs BUBS IS THE BEST
     ⒷⓊⒷⓈ ⒾⓈ ⓉⒽⒺ ⒷⒺⓈⓉ
 
+    $ bubs --loud bubs gets shouty
+    ⒷⓊⒷⓈ ⒼⒺⓉⓈ ⓈⒽⓄⓊⓉⓎ
+
 It also copies it to your clipboard for easy pasting. That's it.
 
 ## ⒾⓃⓈⓉⒶⓁⓁ
