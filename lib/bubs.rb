@@ -1,6 +1,6 @@
 # encoding: utf-8
 class Bubs
-  VERSION = '0.0.5'
+  VERSION = '0.0.6'
 
   # Convert words to ⓌⓄⓇⒹⓈ.
   #
@@ -19,9 +19,9 @@ class Bubs
     when /linux/
       'xclip'
     end
-    
+
     system("powershell -Command '\"#{text}\"' | clip") if RUBY_PLATFORM =~ /mswin/
-    
+
     copycmd && system("printf \"#{text}\" | #{copycmd}")
   end
 end
