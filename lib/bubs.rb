@@ -18,10 +18,10 @@ class Bubs
       'pbcopy'
     when /linux/
       'xclip'
-    when /windows/
-      'clip'
     end
-
+    
+    system("powershell -Command '\"#{text}\"' | clip") if RUBY_PLATFORM =~ /mswin/
+    
     copycmd && system("printf \"#{text}\" | #{copycmd}")
   end
 end
