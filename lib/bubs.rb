@@ -11,13 +11,15 @@ class Bubs
 
   # Copies the text to clipboard
   #
-  # ... not in windows, tho
+  # ... not in windows xp, tho
   def self.copy(text)
     copycmd = case RUBY_PLATFORM
     when /darwin/
       'pbcopy'
     when /linux/
       'xclip'
+    when /windows/
+      'clip'
     end
 
     copycmd && system("printf \"#{text}\" | #{copycmd}")
